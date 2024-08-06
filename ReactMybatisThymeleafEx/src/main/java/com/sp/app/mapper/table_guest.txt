@@ -1,0 +1,16 @@
+-- DROP TABLE guest PURGE;
+CREATE TABLE guest (
+   num NUMBER NOT NULL
+   ,name VARCHAR2(30) NOT NULL
+   ,content  VARCHAR2(4000) NOT NULL
+   ,reg_date  DATE DEFAULT SYSDATE
+   ,CONSTRAINT pk_guest_num PRIMARY KEY(num)
+);
+
+-- DROP SEQUENCE guest_seq;
+CREATE SEQUENCE guest_seq
+    INCREMENT BY 1
+    START WITH 1
+    NOMAXVALUE
+    NOCYCLE
+    NOCACHE;

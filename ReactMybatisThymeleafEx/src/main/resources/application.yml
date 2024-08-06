@@ -1,0 +1,18 @@
+server:
+  port: 9090
+
+spring:
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    cache: false    # thymeleaf에 대한 캐시를 남기지 않는다. 운영시에는 true.
+  datasource:
+    # url: jdbc:oracle:thin:@//127.0.0.1:1521/xe
+    url: jdbc:log4jdbc:oracle:thin:@//127.0.0.1:1521/xe   
+    driver-class-name: net.sf.log4jdbc.sql.jdbcapi.DriverSpy  
+    hikari:
+      username: sky
+      password: java$!
+
+mybatis:
+  mapper-locations: classpath*:/mybatis/mapper/**/*.xml
